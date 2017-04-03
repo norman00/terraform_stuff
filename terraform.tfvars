@@ -31,4 +31,4 @@ global_contact_tag        = "user@domain.com"
 global_environment_tag    = "prod"
 global_product_tag        = "country-erp"
 
-external_ips_allowed    = "187.72.91.161/32,187.72.91.162/32,187.72.91.163/32,187.72.91.164/32,187.72.91.165/32,187.72.91.166/32,187.72.91.167/32,187.72.91.168/32,201.17.24.64/32,177.207.207.224/32,187.162.207.243/32,189.195.134.130/32"
+external_ips_allowed    = "xxx.xx.xx.xxx/32,xxx.xx.xx.xxx/32,..."
