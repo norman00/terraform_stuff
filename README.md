@@ -1,2 +1,2 @@
-# pix_module
-Terraform scripts for PIX module
+# jump_module
+Terraform scripts for EDITme module
