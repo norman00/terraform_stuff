@@ -1,6 +1,6 @@
-# - - - - - - - - - - - - - - - - - - - - - - -
+# -------------------------------------------------
 # ELASTIC LOAD BALANCER for JUMP instances and ASG
-# - - - - - - - - - - - - - - - - - - - - - - -
+# -------------------------------------------------
 
 resource "aws_elb" "externalelb" {
         name = "externalelb"

@@ -1,6 +1,6 @@
-# - - - - - - - - - - - - - - - - - - - - - - -
+# ---------------------------------------------
 # Launch configuration for JUMP box
-# - - - - - - - - - - - - - - - - - - - - - - -
+# ---------------------------------------------
 
 resource "aws_launch_configuration" "jump_lc" {
         name = "jump_lc"
@@ -20,9 +20,9 @@ resource "aws_launch_configuration" "jump_lc" {
         }
 }
 
-# - - - - - - - - - - - - - - - - - - - - - - -
+# ---------------------------------------------
 # AutoScaling group for JUMP host
-# - - - - - - - - - - - - - - - - - - - - - - -
+# ---------------------------------------------
 
 resource "aws_autoscaling_group" "jump_asg" {
         availability_zones = "${split(",", var.global_availability_zones)}"

@@ -1,6 +1,6 @@
-# - - - - - - - - - - - - - - - - - - - - - - -
+# ---------------------------------------------
 # Creating security groups
-# - - - - - - - - - - - - - - - - - - - - - - -
+# ---------------------------------------------
 
 resource "aws_security_group" "elb_sg" {
         name = "elb_sg"
@@ -15,7 +15,7 @@ resource "aws_security_group" "elb_sg" {
                 from_port = 3389
                 to_port = 3389
                 protocol = "TCP"
-# No se pueden usar security_groups por que cycle
+                # not using security_groups because cycle
                 cidr_blocks = "${split(",", var.jump_cidr_blocks)}"
         }
         vpc_id = "${var.vpc_id}"
@@ -35,7 +35,7 @@ resource "aws_security_group" "jump_sg" {
                 to_port = 3389
                 protocol = "TCP"
                 cidr_blocks = ["${var.pix_cidr_blocks}"]
-#                security_groups = ["${aws_security_group.pix_sg.id}"]
+                # security_groups = ["${aws_security_group.pix_sg.id}"]
         }
         egress {
                 from_port = 3389
@@ -54,7 +54,7 @@ resource "aws_security_group" "pix_sg" {
                 to_port = 3389
                 protocol = "TCP"
                 security_groups = ["${aws_security_group.jump_sg.id}"]
-#                cidr_blocks = ["${var.jump_cidr_blocks}"]
+                # cidr_blocks = ["${var.jump_cidr_blocks}"]
         }
         egress {
                 from_port = 0
