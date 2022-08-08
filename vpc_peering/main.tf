@@ -38,7 +38,7 @@ resource "aws_vpc_peering_connection" "accounta" {
   auto_accept   = false
 
   tags = {
-    Name = "accounta - accountc VPC peering"
+    Name = "VPC peering from Account A to C"
   }
 }
 
@@ -51,7 +51,7 @@ resource "aws_vpc_peering_connection_accepter" "accountc" {
   auto_accept               = true
 
   tags = {
-    Name = "accountc - accounta VPC peering"
+    Name = "VPC peering from Account C to A"
   }
 }
 
